@@ -144,6 +144,7 @@ dialog button{position:absolute;right:6px;top:6px;width:44px;height:44px;border-
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
+<script data-goatcounter="https://prismata.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
 <a class="skip" href="#themes">Skip to themes</a>
@@ -272,6 +273,15 @@ grid.addEventListener('click', e => {
   lb.querySelector('.cap').textContent = t.name; lb.showModal();
 });
 lb.querySelector('button').onclick = () => lb.close();
+
+// download statistics (GoatCounter event, no cookies)
+function track(path, title) { try { window.goatcounter && window.goatcounter.count && window.goatcounter.count({ path, title, event: true }); } catch (e) {} }
+grid.addEventListener('click', e => {
+  const a = e.target.closest('.dl'); if (!a) return;
+  const t = D.themes[+a.closest('.card').querySelector('.pic').dataset.i];
+  track(`download/${st.o}/${st.c}/${st.p}/${t.id}`, `Download ${t.name} · ${st.o} · ${st.c} · ${st.p}`);
+});
+document.getElementById('packbtn').addEventListener('click', () => track(`download/pack/${st.o}/${st.c}/${st.p}`, `Download All 30 · ${st.o} · ${st.c} · ${st.p}`));
 lb.addEventListener('click', e => { if (e.target === lb) lb.close(); });
 
 // hero showcase: cross-fade through every colourway
