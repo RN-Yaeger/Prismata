@@ -11,209 +11,141 @@
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#09090b">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1'%3E%3Cstop offset='0' stop-color='%2326E8DC'/%3E%3Cstop offset='.5' stop-color='%23B266FF'/%3E%3Cstop offset='1' stop-color='%23FF2E97'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M16 3 29 27H3z' fill='none' stroke='url(%23g)' stroke-width='3.5' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3 29 27H3z' fill='none' stroke='%23eeeff1' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E">
 <style>
 @font-face{font-family:Inter;font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/inter-latin-400-normal.woff2) format('woff2')}
 @font-face{font-family:Inter;font-style:normal;font-weight:500;font-display:swap;src:url(assets/fonts/inter-latin-500-normal.woff2) format('woff2')}
 @font-face{font-family:Inter;font-style:normal;font-weight:600;font-display:swap;src:url(assets/fonts/inter-latin-600-normal.woff2) format('woff2')}
 @font-face{font-family:Inter;font-style:normal;font-weight:700;font-display:swap;src:url(assets/fonts/inter-latin-700-normal.woff2) format('woff2')}
 @font-face{font-family:Inter;font-style:normal;font-weight:900;font-display:swap;src:url(assets/fonts/inter-latin-900-normal.woff2) format('woff2')}
-:root{
-  --bg:#09090b; --panel:#111114; --panel2:#17171b; --line:#26262c; --ink:#eeeff1; --dim:#8b8f96; --dimmer:#5d6168;
-  --prism:linear-gradient(90deg,#ff3b3b,#ffa54f,#ffd23f,#33ff66,#18f0ff,#2e8bff,#b266ff,#ff3d8b);
-  --r:14px;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-a{color:inherit}
-.wrap{width:min(1240px,100% - 32px);margin-inline:auto}
-.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;background:#fff;color:#000;padding:8px 12px;border-radius:8px;z-index:99}
-:focus-visible{outline:2px solid #18f0ff;outline-offset:3px;border-radius:6px}
-
-/* header */
-header.top{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
-.logo{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.14em;text-decoration:none}
-.logo svg{width:26px;height:26px}
-.top nav{display:flex;gap:6px}
-.top nav a{text-decoration:none;color:var(--dim);font-weight:500;font-size:15px;padding:8px 12px;border-radius:999px;transition:color .2s,background .2s}
-.top nav a:hover{color:var(--ink);background:var(--panel2)}
-
+:root{--bg:#08080a;--s1:#0f0f12;--s2:#16161a;--s3:#1e1e23;--line:rgba(238,239,241,.08);--line2:rgba(238,239,241,.14);--ink:#eeeff1;--dim:#9a9ea6;--mute:#6b6f77;
+--prism:linear-gradient(90deg,#ff3b3b,#ffa54f,#ffd23f,#33ff66,#18f0ff,#2e8bff,#b266ff,#ff3d8b);--ease:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
+a{color:inherit}.wrap{width:min(1280px,100% - 48px);margin-inline:auto}
+:focus-visible{outline:2px solid #eeeff1;outline-offset:3px;border-radius:6px}
+header{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:.08em;text-decoration:none}
+.logo svg{width:22px;height:22px}
+nav{display:flex;gap:4px}nav a{color:var(--dim);text-decoration:none;font-size:15px;padding:8px 12px;border-radius:8px;transition:color .15s,background-color .15s}nav a:hover{color:var(--ink);background:var(--s2)}
 /* hero */
-.hero{padding:56px 0 40px;position:relative}
-.hero h1{margin:0;font-weight:900;font-size:clamp(56px,11vw,148px);line-height:.92;letter-spacing:-.02em;
-  background:var(--prism);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:shift 12s linear infinite}
-@keyframes shift{to{background-position:200% 0}}
-.hero p.lead{font-size:clamp(18px,2.2vw,22px);color:var(--dim);max-width:720px;margin:18px 0 0}
-.hero p.lead b{color:var(--ink);font-weight:600}
-.facts{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 0;padding:0;list-style:none}
-.facts li{border:1px solid var(--line);background:var(--panel);padding:8px 14px;border-radius:999px;font-size:14px;color:var(--dim)}
-.facts li b{color:var(--ink);font-weight:600}
-.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-.btn{display:inline-flex;align-items:center;gap:10px;min-height:46px;padding:0 20px;border-radius:12px;font:600 15px Inter,sans-serif;
-  text-decoration:none;border:1px solid var(--line);background:var(--panel2);color:var(--ink);cursor:pointer;transition:transform .15s,border-color .2s,background .2s}
-.btn:hover{transform:translateY(-1px);border-color:#3a3a42}
-.btn:active{transform:translateY(1px)}
-.btn.primary{background:#fff;color:#000;border-color:#fff}
-.btn.primary:hover{background:#e9e9ec}
+.hero{position:relative;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:center;min-height:620px;gap:24px}
+.eyebrow{font-size:14px;color:var(--mute);margin:0 0 20px}
+.eyebrow b{color:var(--dim);font-weight:500}
+h1{font-weight:500;font-size:clamp(44px,5.6vw,84px);white-space:nowrap;line-height:1;letter-spacing:-.045em;margin:0}
+h1 span{color:var(--mute)}
+.lead{font-size:19px;color:var(--dim);margin:28px 0 0;max-width:30em}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:46px;padding:0 20px;border-radius:10px;font:500 15px Inter,sans-serif;text-decoration:none;border:1px solid var(--line2);background:var(--s2);color:var(--ink);cursor:pointer;transition:background-color .15s,border-color .15s}
+.btn:hover{background:var(--s3)}.btn.primary{background:#eeeff1;color:#08080a;border-color:#eeeff1}.btn.primary:hover{background:#fff}
 .btn svg{width:18px;height:18px}
-.showcase{margin-top:44px;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:#000;position:relative;aspect-ratio:4/1}
-.showcase img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s}
-.showcase img.on{opacity:1}
-.showcase-name{position:absolute;right:14px;bottom:12px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.6);padding:5px 10px;border-radius:999px;backdrop-filter:blur(6px)}
-
-/* configurator */
-section{scroll-margin-top:96px}
-h2{font-size:clamp(28px,4vw,40px);line-height:1.1;margin:0 0 8px;letter-spacing:-.01em}
-.sub{color:var(--dim);margin:0 0 26px}
-#themes{padding:72px 0 40px}
-.bar{position:sticky;top:0;z-index:20;background:rgba(9,9,11,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);margin:0 -16px;padding:14px 16px}
-.bar-in{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
-.group{display:flex;align-items:center;gap:10px}
-.group .lbl{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--dimmer);font-weight:600}
-.seg{display:inline-flex;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:3px}
-.seg button{border:0;background:transparent;color:var(--dim);font:600 14px Inter,sans-serif;padding:0 14px;min-height:38px;border-radius:9px;cursor:pointer;transition:background .2s,color .2s}
-.seg button:hover{color:var(--ink)}
-.seg button[aria-pressed=true]{background:#fff;color:#000}
-.bar .pack{margin-left:auto}
-.hint{font-size:13px;color:var(--dimmer);margin:14px 0 0}
-
-.grid{display:grid;gap:18px;margin-top:26px;grid-template-columns:repeat(auto-fill,minmax(360px,1fr))}
-.grid.v{grid-template-columns:repeat(auto-fill,minmax(170px,1fr))}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,border-color .2s,box-shadow .2s}
-.card:hover{transform:translateY(-2px);border-color:#3a3a42;box-shadow:0 14px 40px -18px rgba(0,0,0,.8)}
-.card .pic{display:block;background:#000;aspect-ratio:4/1;overflow:hidden;cursor:zoom-in;border:0;padding:0;width:100%}
-.grid.v .card .pic{aspect-ratio:1/4}
-.card .pic img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}
-.card:hover .pic img{transform:scale(1.025)}
-.card .meta{display:flex;align-items:center;gap:10px;padding:12px 14px 0}
-.num{font-size:12px;color:var(--dimmer);font-weight:600;font-variant-numeric:tabular-nums}
-.name{font-weight:700;font-size:16px;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.dots{display:flex}
-.dots i{width:13px;height:13px;border-radius:50%;border:1.5px solid #34343a;margin-left:-3px}
-.tag{font-size:10px;font-weight:700;letter-spacing:.1em;padding:3px 7px;border-radius:999px;background:var(--prism);color:#000}
-.tag.light{background:#fff}
-.card .act{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px 14px}
-.size{font-size:13px;color:var(--dimmer)}
-.dl{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;border-radius:10px;background:#fff;color:#000;text-decoration:none;font:600 14px Inter,sans-serif;transition:transform .15s,background .2s}
-.dl:hover{background:#e6e6ea;transform:translateY(-1px)}
-.dl:active{transform:translateY(1px)}
-.dl svg{width:16px;height:16px}
-.grid.v .card .meta{flex-wrap:wrap;gap:6px}
-.grid.v .card .act{flex-direction:column;align-items:stretch}
-.grid.v .dl{justify-content:center}
-
-/* steps */
-#install{padding:80px 0}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;counter-reset:s;margin:0;padding:0;list-style:none}
-.steps li{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:24px;position:relative}
-.steps li::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--prism);color:#000;font-weight:900;margin-bottom:16px}
-.steps h3{margin:0 0 6px;font-size:18px}
-.steps p{margin:0;color:var(--dim)}
-.notes{margin-top:22px;color:var(--dim);font-size:15px;columns:2 320px;column-gap:40px}
-.notes p{margin:0 0 10px;break-inside:avoid}
-.notes b{color:var(--ink)}
-
-/* changelog */
-#changelog{padding:20px 0 90px}
-.log{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:10px}
-.log div{border-left:2px solid var(--line);padding:4px 0 4px 16px}
-.log div:last-child{border-image:var(--prism) 1}
-.log b{display:block;font-size:14px;letter-spacing:.06em}
-.log span{color:var(--dim);font-size:14px}
-.thanks{margin-top:34px;padding:28px;border-radius:var(--r);background:var(--panel);border:1px solid var(--line);font-size:18px}
-.thanks strong{background:var(--prism);-webkit-background-clip:text;background-clip:text;color:transparent}
-
-footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--dimmer);font-size:14px;display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between}
-
-/* lightbox */
-dialog{border:0;padding:0;background:transparent;max-width:min(96vw,1600px);max-height:92vh}
-dialog::backdrop{background:rgba(0,0,0,.86);backdrop-filter:blur(4px)}
-dialog img{display:block;max-width:100%;max-height:86vh;border-radius:12px}
-dialog .cap{color:#fff;text-align:center;margin-top:10px;font-weight:600}
-dialog button{position:absolute;right:6px;top:6px;width:44px;height:44px;border-radius:50%;border:0;background:rgba(0,0,0,.6);color:#fff;font-size:22px;cursor:pointer}
-
-@media (max-width:760px){
-  .top nav a:not(.keep){display:none}
-  .grid{grid-template-columns:1fr}
-  .grid.v{grid-template-columns:repeat(2,1fr)}
-  .bar{position:static}
-  .bar .pack{margin-left:0;width:100%}
-  .bar .pack .btn{width:100%;justify-content:center}
-  .group{width:100%;justify-content:space-between}
-}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.prism{position:relative;height:560px;margin-right:calc((100vw - min(1280px,100vw - 48px))/-2)}
+.prism svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.beam{cursor:pointer;transition:opacity .2s}
+.beams:hover .beam{opacity:.35}.beams .beam:hover,.beams .beam.sel{opacity:1}
+.beam-label{position:absolute;right:24px;font-size:13px;color:var(--ink);pointer-events:none;transition:opacity .15s;opacity:0;white-space:nowrap}
+/* studio */
+section{scroll-margin-top:24px}
+.sec{padding:120px 0 0}
+.sec h2{font-weight:500;font-size:clamp(32px,4vw,52px);letter-spacing:-.035em;line-height:1.05;margin:0}
+.sec .sub{color:var(--dim);margin:14px 0 0;font-size:17px}
+.studio{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:48px;margin-top:48px;align-items:start}
+.stage{position:sticky;top:24px}
+.filters{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;margin-bottom:20px}
+.group{display:flex;align-items:center;gap:10px}.lbl{font-size:13px;color:var(--mute)}
+.seg{display:inline-flex;background:var(--s1);border:1px solid var(--line);border-radius:10px;padding:3px}
+.seg button{border:0;background:transparent;color:var(--dim);font:500 14px Inter,sans-serif;padding:0 14px;min-height:36px;border-radius:7px;cursor:pointer;transition:background-color .15s,color .15s}
+.seg button:hover{color:var(--ink)}.seg button[aria-pressed=true]{background:var(--s3);color:var(--ink);box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+.device{padding:14px;border-radius:22px;background:linear-gradient(#1b1b20,#111114);border:1px solid #26262d;box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 50px 90px -50px #000}
+.screen{position:relative;border-radius:9px;overflow:hidden;background:#000;aspect-ratio:4/1;cursor:zoom-in;display:block;width:100%;border:0;padding:0}
+.screen img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .35s var(--ease)}
+.screen .glare{position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.06),rgba(255,255,255,0) 40%);pointer-events:none}
+.stage.v .device{width:min(196px,100%);margin-inline:auto}.stage.v .screen{aspect-ratio:1/4}
+.info{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-top:28px;flex-wrap:wrap}
+.info .no{font-size:14px;color:var(--mute)}
+.info h3{margin:6px 0 0;font-weight:500;font-size:40px;letter-spacing:-.03em;line-height:1}
+.info .spec{display:block;height:2px;width:120px;margin-top:16px;border-radius:2px}
+.info .meta{font-size:14px;color:var(--mute);margin-top:12px}
+.dlrow{display:flex;gap:10px;flex-wrap:wrap}
+.list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.list li button{display:grid;grid-template-columns:28px 104px 1fr auto;align-items:center;gap:14px;width:100%;padding:10px 12px;background:none;border:0;border-bottom:1px solid var(--line);color:var(--dim);font:400 15px Inter,sans-serif;text-align:left;cursor:pointer;position:relative;transition:background-color .15s,color .15s}
+.list li button:hover{background:var(--s1);color:var(--ink)}
+.list li button[aria-current=true]{background:var(--s2);color:var(--ink)}
+.list li button[aria-current=true]::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(var(--a),var(--b))}
+.list .n{font-size:13px;color:var(--mute)}
+.list .th{width:104px;height:26px;border-radius:3px;overflow:hidden;background:#000;border:1px solid #000}
+.list .th img{width:100%;height:100%;object-fit:cover;display:block}
+.dots{display:flex}.dots i{width:12px;height:12px;border-radius:50%;margin-left:-3px;box-shadow:0 0 0 1.5px var(--bg)}
+.list .lt{font-size:12px;color:var(--mute);margin-left:8px}
+/* install */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);margin:48px 0 0;padding:0;list-style:none;border-top:1px solid var(--line);counter-reset:s}
+.steps li{padding:24px 32px 0 0}
+.steps li::before{counter-increment:s;content:counter(s,decimal-leading-zero);display:block;color:var(--mute);font-size:14px;margin-bottom:16px}
+.steps h3{margin:0 0 6px;font-weight:500;font-size:20px}.steps p{margin:0;color:var(--dim)}
+.notes{margin-top:40px;color:var(--dim);font-size:15px;columns:2 320px;column-gap:48px}.notes p{margin:0 0 10px;break-inside:avoid}.notes b{color:var(--ink);font-weight:500}
+.log{display:grid;grid-template-columns:repeat(6,1fr);border-top:1px solid var(--line);margin-top:48px}
+.log div{padding:16px 16px 0 0;position:relative}
+.log div:last-child::before{content:"";position:absolute;left:0;right:16px;top:-1px;height:2px;background:var(--prism)}
+.log b{display:block;font-size:14px;font-weight:500}.log span{color:var(--dim);font-size:14px}
+.thanks{font-size:clamp(22px,2.6vw,30px);line-height:1.45;letter-spacing:-.015em;max-width:900px;margin:96px 0 0;color:var(--ink)}
+footer{border-top:1px solid var(--line);margin-top:120px;padding:28px 0 48px;color:var(--mute);font-size:14px;display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between}
+dialog{border:0;padding:0;background:transparent;max-width:min(96vw,1600px);max-height:92vh}dialog::backdrop{background:rgba(0,0,0,.88)}
+dialog img{display:block;max-width:100%;max-height:86vh;border-radius:10px}dialog button{position:absolute;right:6px;top:6px;width:44px;height:44px;border-radius:50%;border:0;background:rgba(0,0,0,.6);color:#fff;font-size:22px;cursor:pointer}
+@media (max-width:600px){nav a:not(:first-child){display:none}}
+@media (max-width:1000px){.hero{grid-template-columns:1fr;min-height:0;padding-top:40px}.prism{height:320px;margin-right:-24px}.studio{grid-template-columns:1fr}.stage{position:static}.steps{grid-template-columns:1fr}.steps li{padding-bottom:24px}.log{grid-template-columns:1fr 1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 <script data-goatcounter="https://prismata.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
-<a class="skip" href="#themes">Skip to themes</a>
 <div class="wrap">
-  <header class="top">
-    <a class="logo" href="#top" aria-label="PRISMATA home">
-      <svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lg" x1="0" x2="1"><stop offset="0" stop-color="#26E8DC"/><stop offset=".5" stop-color="#B266FF"/><stop offset="1" stop-color="#FF2E97"/></linearGradient></defs><path d="M16 3 29 27H3z" fill="none" stroke="url(#lg)" stroke-width="3.5" stroke-linejoin="round"/></svg>
-      PRISMATA
-    </a>
-    <nav aria-label="Main">
-      <a href="#themes" class="keep">Themes</a>
-      <a href="#install">Install</a>
-      <a href="#changelog">Changelog</a>
-    </nav>
-  </header>
+<header><a class="logo" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 29 27H3z" fill="none" stroke="#eeeff1" stroke-width="3" stroke-linejoin="round"/></svg>PRISMATA</a>
+<nav aria-label="Main"><a href="#themes">Themes</a><a href="#install">Install</a><a href="#changelog">Changelog</a></nav></header>
+<section class="hero" id="top">
+  <div>
+    <p class="eyebrow"><b>PRISMATA v2.0</b> · free themes for L-Connect 3</p>
+    <h1>One design.<br><span>30 colourways.</span></h1>
+    <p class="lead">Sensor themes for the Lian Li 8.8" Universal Screen. Live CPU, GPU and system stats, horizontal or vertical, 24h or 12h clock, with or without pump RPM.</p>
+    <div class="cta"><a class="btn primary" href="#themes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>Pick your theme</a><a class="btn" href="#install">How to install</a></div>
+  </div>
+  <div class="prism" id="prism" aria-hidden="true"><svg id="psvg"></svg><span class="beam-label" id="blabel"></span></div>
+</section>
 
-  <section class="hero" id="top">
-    <h1>PRISMATA</h1>
-    <p class="lead"><b>30 themes for the Lian Li 8.8" Universal Screen.</b> One clean design, refracted into 30 colourways. Live CPU, GPU and system stats in L-Connect 3, free to download.</p>
-    <ul class="facts">
-      <li><b>30</b> colourways</li><li>Horizontal &amp; <b>vertical</b></li><li><b>24h</b> &amp; <b>12h</b> clock</li><li>With &amp; without <b>pump RPM</b></li><li><b>240</b> templates</li>
-    </ul>
-    <div class="cta">
-      <a class="btn primary" href="#themes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>Choose your theme</a>
-      <a class="btn" href="#install">How to install</a>
-    </div>
-    <div class="showcase" id="showcase" aria-label="Theme showcase"></div>
-  </section>
-
-  <section id="themes" aria-labelledby="themes-h">
-    <h2 id="themes-h">Pick your setup, then your colour</h2>
-    <p class="sub">Every download is one ready-to-import file of about 0.7 MB. Only grab what you want.</p>
-    <div class="bar" role="region" aria-label="Setup">
-      <div class="bar-in">
-        <div class="group"><span class="lbl" id="l-o">Screen</span>
-          <div class="seg" role="group" aria-labelledby="l-o" data-key="o">
-            <button data-v="horizontal" aria-pressed="true">Horizontal</button><button data-v="vertical" aria-pressed="false">Vertical</button></div></div>
-        <div class="group"><span class="lbl" id="l-c">Clock</span>
-          <div class="seg" role="group" aria-labelledby="l-c" data-key="c">
-            <button data-v="24h" aria-pressed="true">24h</button><button data-v="12h" aria-pressed="false">12h</button></div></div>
-        <div class="group"><span class="lbl" id="l-p">AIO</span>
-          <div class="seg" role="group" aria-labelledby="l-p" data-key="p">
-            <button data-v="with-pump" aria-pressed="true">With pump</button><button data-v="no-pump" aria-pressed="false">No pump</button></div></div>
-        <div class="pack"><a class="btn" id="packbtn" href="#" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg><span id="packtxt">All 30</span></a></div>
+<section class="sec" id="themes" aria-labelledby="th">
+  <h2 id="th">Pick your theme</h2>
+  <p class="sub">Choose your screen, then a colour. Every download is one file that L-Connect imports as it is.</p>
+  <div class="studio">
+    <div class="stage" id="stage">
+      <div class="filters">
+        <div class="group"><span class="lbl" id="l-o">Screen</span><div class="seg" role="group" aria-labelledby="l-o" data-key="o"><button data-v="horizontal">Horizontal</button><button data-v="vertical">Vertical</button></div></div>
+        <div class="group"><span class="lbl" id="l-c">Clock</span><div class="seg" role="group" aria-labelledby="l-c" data-key="c"><button data-v="24h">24h</button><button data-v="12h">12h</button></div></div>
+        <div class="group"><span class="lbl" id="l-p">Pump</span><div class="seg" role="group" aria-labelledby="l-p" data-key="p"><button data-v="with-pump">With pump</button><button data-v="no-pump">No pump</button></div></div>
+      </div>
+      <div class="device"><button class="screen" id="screen" aria-label="Enlarge preview"><img id="big" alt="" src="data:image/gif;base64,R0lGODlhAQABAAAAACw="><span class="glare"></span></button></div>
+      <div class="info">
+        <div><div class="no" id="no"></div><h3 id="tname"></h3><span class="spec" id="tspec"></span><div class="meta" id="tmeta"></div></div>
+        <div class="dlrow"><a class="btn primary" id="dl" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg>Download</a><a class="btn" id="packbtn" download></a></div>
       </div>
     </div>
-    <p class="hint" id="hint"></p>
-    <div class="grid" id="grid"></div>
-  </section>
+    <ul class="list" id="list" aria-label="Colourways"></ul>
+  </div>
+</section>
 
-  <section id="install" aria-labelledby="install-h">
-    <h2 id="install-h">Install in under a minute</h2>
-    <p class="sub">Works with L-Connect 3 and the Lian Li 8.8" Universal Screen.</p>
-    <ol class="steps">
-      <li><h3>Download</h3><p>Choose screen, clock and pump above, then hit Download on the colour you like.</p></li>
-      <li><h3>Keep it zipped</h3><p>Don't unzip the file. L-Connect imports the .zip as it is.</p></li>
-      <li><h3>Import</h3><p>Open L-Connect 3, go to the Universal Screen and click the "+" tile. Select the .zip, done.</p></li>
-    </ol>
-    <div class="notes">
+<section class="sec" id="install" aria-labelledby="ih">
+  <h2 id="ih">Install in under a minute</h2>
+  <p class="sub">Works with L-Connect 3 and the Lian Li 8.8" Universal Screen.</p>
+  <ol class="steps"><li><h3>Download</h3><p>Choose screen, clock and pump, then download the colour you like.</p></li><li><h3>Keep it zipped</h3><p>Don't unzip the file. L-Connect imports the .zip as it is.</p></li><li><h3>Import</h3><p>Open L-Connect 3, go to the Universal Screen and click the "+" tile. Select the .zip, done.</p></li></ol>
+  <div class="notes">
       <p><b>Pump:</b> "With pump" shows your AIO pump RPM. No compatible AIO? Use "No pump".</p>
       <p><b>Font:</b> uses Microsoft YaHei, which ships with Windows. Nothing to install.</p>
       <p><b>RAM total shows "--"?</b> Then L-Connect isn't reporting it on your system.</p>
       <p><b>Bright themes:</b> Stormtrooper and Mono Light have a white background.</p>
     </div>
-  </section>
+</section>
 
-  <section id="changelog" aria-labelledby="log-h">
-    <h2 id="log-h">From Minimal to PRISMATA</h2>
-    <div class="log">
+<section class="sec" id="changelog" aria-labelledby="ch">
+  <h2 id="ch">From Minimal to PRISMATA</h2>
+  <div class="log">
       <div><b>v1.0</b><span>Minimal Forza, the first theme</span></div>
       <div><b>v1.1</b><span>Black &amp; White, Cyberpunk, English labels, RAM/VRAM fixes</span></div>
       <div><b>v1.2</b><span>No-pump versions</span></div>
@@ -221,78 +153,70 @@ dialog button{position:absolute;right:6px;top:6px;width:44px;height:44px;border-
       <div><b>v1.4</b><span>Mono Dark, Mono Light, 12h clock</span></div>
       <div><b>v2.0 · PRISMATA</b><span>23 new colourways, 30 in total, in every variant</span></div>
     </div>
-    <p class="thanks">Thank you for the <strong>huge</strong> response to my very first theme. Your feedback and ideas turned it into 240 templates. Share a picture of your setup!</p>
-  </section>
-
-  <footer>
-    <span>PRISMATA v2.0 · fan-made, free to use · <a href="privacy.html">Privacy</a></span>
-    <span>Not affiliated with Lian Li. L-Connect is a product of Lian Li.</span>
-  </footer>
+    
+  <p class="thanks">Thank you for the huge response to my very first theme. Your feedback and ideas turned it into 240 templates. Share a picture of your setup, I would love to see it.</p>
+</section>
+<footer><span>PRISMATA v2.0 · fan-made, free to use · <a href="privacy.html">Privacy</a></span><span>Not affiliated with Lian Li. L-Connect is a product of Lian Li.</span></footer>
 </div>
-
-<dialog id="lb" aria-label="Preview"><button aria-label="Close preview">×</button><img alt=""><div class="cap"></div></dialog>
-
+<dialog id="lb" aria-label="Preview"><button aria-label="Close preview">×</button><img alt=""></dialog>
 <script>
 const D = {"files":{"horizontal|24h|with-pump|Forza":{"zip":"files/horizontal/24h/with-pump/Prismata_Forza.zip","img":"assets/previews/horizontal/24h/with-pump/Forza.webp","kb":694},"horizontal|24h|no-pump|Forza":{"zip":"files/horizontal/24h/no-pump/Prismata_Forza_NoPump.zip","img":"assets/previews/horizontal/24h/no-pump/Forza.webp","kb":665},"horizontal|24h|with-pump|BlackWhite":{"zip":"files/horizontal/24h/with-pump/Prismata_BlackWhite.zip","img":"assets/previews/horizontal/24h/with-pump/BlackWhite.webp","kb":506},"horizontal|24h|no-pump|BlackWhite":{"zip":"files/horizontal/24h/no-pump/Prismata_BlackWhite_NoPump.zip","img":"assets/previews/horizontal/24h/no-pump/BlackWhite.webp","kb":481},"horizontal|24h|with-pump|Cyberpunk":{"zip":"files/horizontal/24h/with-pump/Prismata_Cyberpunk.zip","img":"assets/previews/horizontal/24h/with-pump/Cyberpunk.webp","kb":726},"horizontal|24h|no-pump|Cyberpunk":{"zip":"files/horizontal/24h/no-pump/Prismata_Cyberpunk_NoPump.zip","img":"assets/previews/horizontal/24h/no-pump/Cyberpunk.webp","kb":702},"horizontal|24h|with-pump|BlueRed":{"zip":"files/horizontal/24h/with-pump/Prismata_BlueRed.zip","img":"assets/previews/horizontal/24h/with-pump/BlueRed.webp","kb":694},"horizontal|24h|no-pump|BlueRed":{"zip":"files/horizontal/24h/no-pump/Prismata_BlueRed_NoPump.zip","img":"assets/previews/horizontal/24h/no-pump/BlueRed.webp","kb":661},"horizontal|24h|with-pump|Stormtrooper":{"zip":"files/horizontal/24h/with-pump/Prismata_Stormtrooper.zip","img":"assets/previews/horizontal/24h/with-pump/Stormtrooper.webp","kb":510},"horizontal|24h|no-pump|Stormtrooper":{"zip":"files/horizontal/24h/no-pump/Prismata_Stormtrooper_NoPump.zip","img":"assets/previews/horizontal/24h/no-pump/Stormtrooper.webp","kb":481},"horizontal|24h|with-pump|MonoDark":{"zip":"files/horizontal/24h/with-pump/Prismata_MonoDark.zip","img":"assets/previews/horizontal/24h/with-pump/MonoDark.webp","kb":467},"horizontal|24h|no-pump|MonoDark":{"zip":"files/horizontal/24h/no-pump/Prismata_MonoDark_NoPump.zip","img":"assets/previews/horizontal/24h/no-pump/MonoDark.webp","kb":443},"horizontal|24h|with-pump|MonoLight":{"zip":"files/horizontal/24h/with-pump/Prismata_MonoLight.zip","img":"assets/previews/horizontal/24h/with-pump/MonoLight.webp","kb":420},"horizontal|24h|no-pump|MonoLight":{"zip":"files/horizontal/24h/no-pump/Prismata_MonoLight_NoPump.zip","img":"assets/previews/horizontal/24h/no-pump/MonoLight.webp","kb":397},"vertical|24h|with-pump|Forza":{"zip":"files/vertical/24h/with-pump/Prismata_Forza_Vertical.zip","img":"assets/previews/vertical/24h/with-pump/Forza.webp","kb":784},"vertical|24h|no-pump|Forza":{"zip":"files/vertical/24h/no-pump/Prismata_Forza_Vertical_NoPump.zip","img":"assets/previews/vertical/24h/no-pump/Forza.webp","kb":768},"vertical|24h|with-pump|BlackWhite":{"zip":"files/vertical/24h/with-pump/Prismata_BlackWhite_Vertical.zip","img":"assets/previews/vertical/24h/with-pump/BlackWhite.webp","kb":546},"vertical|24h|no-pump|BlackWhite":{"zip":"files/vertical/24h/no-pump/Prismata_BlackWhite_Vertical_NoPump.zip","img":"assets/previews/vertical/24h/no-pump/BlackWhite.webp","kb":522},"vertical|24h|with-pump|Cyberpunk":{"zip":"files/vertical/24h/with-pump/Prismata_Cyberpunk_Vertical.zip","img":"assets/previews/vertical/24h/with-pump/Cyberpunk.webp","kb":825},"vertical|24h|no-pump|Cyberpunk":{"zip":"files/vertical/24h/no-pump/Prismata_Cyberpunk_Vertical_NoPump.zip","img":"assets/previews/vertical/24h/no-pump/Cyberpunk.webp","kb":803},"vertical|24h|with-pump|BlueRed":{"zip":"files/vertical/24h/with-pump/Prismata_BlueRed_Vertical.zip","img":"assets/previews/vertical/24h/with-pump/BlueRed.webp","kb":788},"vertical|24h|no-pump|BlueRed":{"zip":"files/vertical/24h/no-pump/Prismata_BlueRed_Vertical_NoPump.zip","img":"assets/previews/vertical/24h/no-pump/BlueRed.webp","kb":770},"vertical|24h|with-pump|Stormtrooper":{"zip":"files/vertical/24h/with-pump/Prismata_Stormtrooper_Vertical.zip","img":"assets/previews/vertical/24h/with-pump/Stormtrooper.webp","kb":613},"vertical|24h|no-pump|Stormtrooper":{"zip":"files/vertical/24h/no-pump/Prismata_Stormtrooper_Vertical_NoPump.zip","img":"assets/previews/vertical/24h/no-pump/Stormtrooper.webp","kb":589},"vertical|24h|with-pump|MonoDark":{"zip":"files/vertical/24h/with-pump/Prismata_MonoDark_Vertical.zip","img":"assets/previews/vertical/24h/with-pump/MonoDark.webp","kb":509},"vertical|24h|no-pump|MonoDark":{"zip":"files/vertical/24h/no-pump/Prismata_MonoDark_Vertical_NoPump.zip","img":"assets/previews/vertical/24h/no-pump/MonoDark.webp","kb":490},"vertical|24h|with-pump|MonoLight":{"zip":"files/vertical/24h/with-pump/Prismata_MonoLight_Vertical.zip","img":"assets/previews/vertical/24h/with-pump/MonoLight.webp","kb":517},"vertical|24h|no-pump|MonoLight":{"zip":"files/vertical/24h/no-pump/Prismata_MonoLight_Vertical_NoPump.zip","img":"assets/previews/vertical/24h/no-pump/MonoLight.webp","kb":499},"horizontal|12h|with-pump|Forza":{"zip":"files/horizontal/12h/with-pump/Prismata_Forza_12h.zip","img":"assets/previews/horizontal/12h/with-pump/Forza.webp","kb":695},"horizontal|12h|no-pump|Forza":{"zip":"files/horizontal/12h/no-pump/Prismata_Forza_NoPump_12h.zip","img":"assets/previews/horizontal/12h/no-pump/Forza.webp","kb":664},"horizontal|12h|with-pump|BlackWhite":{"zip":"files/horizontal/12h/with-pump/Prismata_BlackWhite_12h.zip","img":"assets/previews/horizontal/12h/with-pump/BlackWhite.webp","kb":507},"horizontal|12h|no-pump|BlackWhite":{"zip":"files/horizontal/12h/no-pump/Prismata_BlackWhite_NoPump_12h.zip","img":"assets/previews/horizontal/12h/no-pump/BlackWhite.webp","kb":480},"horizontal|12h|with-pump|Cyberpunk":{"zip":"files/horizontal/12h/with-pump/Prismata_Cyberpunk_12h.zip","img":"assets/previews/horizontal/12h/with-pump/Cyberpunk.webp","kb":726},"horizontal|12h|no-pump|Cyberpunk":{"zip":"files/horizontal/12h/no-pump/Prismata_Cyberpunk_NoPump_12h.zip","img":"assets/previews/horizontal/12h/no-pump/Cyberpunk.webp","kb":701},"horizontal|12h|with-pump|BlueRed":{"zip":"files/horizontal/12h/with-pump/Prismata_BlueRed_12h.zip","img":"assets/previews/horizontal/12h/with-pump/BlueRed.webp","kb":695},"horizontal|12h|no-pump|BlueRed":{"zip":"files/horizontal/12h/no-pump/Prismata_BlueRed_NoPump_12h.zip","img":"assets/previews/horizontal/12h/no-pump/BlueRed.webp","kb":661},"horizontal|12h|with-pump|Stormtrooper":{"zip":"files/horizontal/12h/with-pump/Prismata_Stormtrooper_12h.zip","img":"assets/previews/horizontal/12h/with-pump/Stormtrooper.webp","kb":511},"horizontal|12h|no-pump|Stormtrooper":{"zip":"files/horizontal/12h/no-pump/Prismata_Stormtrooper_NoPump_12h.zip","img":"assets/previews/horizontal/12h/no-pump/Stormtrooper.webp","kb":482},"horizontal|12h|with-pump|MonoDark":{"zip":"files/horizontal/12h/with-pump/Prismata_MonoDark_12h.zip","img":"assets/previews/horizontal/12h/with-pump/MonoDark.webp","kb":468},"horizontal|12h|no-pump|MonoDark":{"zip":"files/horizontal/12h/no-pump/Prismata_MonoDark_NoPump_12h.zip","img":"assets/previews/horizontal/12h/no-pump/MonoDark.webp","kb":444},"horizontal|12h|with-pump|MonoLight":{"zip":"files/horizontal/12h/with-pump/Prismata_MonoLight_12h.zip","img":"assets/previews/horizontal/12h/with-pump/MonoLight.webp","kb":420},"horizontal|12h|no-pump|MonoLight":{"zip":"files/horizontal/12h/no-pump/Prismata_MonoLight_NoPump_12h.zip","img":"assets/previews/horizontal/12h/no-pump/MonoLight.webp","kb":397},"vertical|12h|with-pump|Forza":{"zip":"files/vertical/12h/with-pump/Prismata_Forza_Vertical_12h.zip","img":"assets/previews/vertical/12h/with-pump/Forza.webp","kb":785},"vertical|12h|no-pump|Forza":{"zip":"files/vertical/12h/no-pump/Prismata_Forza_Vertical_NoPump_12h.zip","img":"assets/previews/vertical/12h/no-pump/Forza.webp","kb":768},"vertical|12h|with-pump|BlackWhite":{"zip":"files/vertical/12h/with-pump/Prismata_BlackWhite_Vertical_12h.zip","img":"assets/previews/vertical/12h/with-pump/BlackWhite.webp","kb":547},"vertical|12h|no-pump|BlackWhite":{"zip":"files/vertical/12h/no-pump/Prismata_BlackWhite_Vertical_NoPump_12h.zip","img":"assets/previews/vertical/12h/no-pump/BlackWhite.webp","kb":522},"vertical|12h|with-pump|Cyberpunk":{"zip":"files/vertical/12h/with-pump/Prismata_Cyberpunk_Vertical_12h.zip","img":"assets/previews/vertical/12h/with-pump/Cyberpunk.webp","kb":826},"vertical|12h|no-pump|Cyberpunk":{"zip":"files/vertical/12h/no-pump/Prismata_Cyberpunk_Vertical_NoPump_12h.zip","img":"assets/previews/vertical/12h/no-pump/Cyberpunk.webp","kb":804},"vertical|12h|with-pump|BlueRed":{"zip":"files/vertical/12h/with-pump/Prismata_BlueRed_Vertical_12h.zip","img":"assets/previews/vertical/12h/with-pump/BlueRed.webp","kb":788},"vertical|12h|no-pump|BlueRed":{"zip":"files/vertical/12h/no-pump/Prismata_BlueRed_Vertical_NoPump_12h.zip","img":"assets/previews/vertical/12h/no-pump/BlueRed.webp","kb":771},"vertical|12h|with-pump|Stormtrooper":{"zip":"files/vertical/12h/with-pump/Prismata_Stormtrooper_Vertical_12h.zip","img":"assets/previews/vertical/12h/with-pump/Stormtrooper.webp","kb":614},"vertical|12h|no-pump|Stormtrooper":{"zip":"files/vertical/12h/no-pump/Prismata_Stormtrooper_Vertical_NoPump_12h.zip","img":"assets/previews/vertical/12h/no-pump/Stormtrooper.webp","kb":590},"vertical|12h|with-pump|MonoDark":{"zip":"files/vertical/12h/with-pump/Prismata_MonoDark_Vertical_12h.zip","img":"assets/previews/vertical/12h/with-pump/MonoDark.webp","kb":510},"vertical|12h|no-pump|MonoDark":{"zip":"files/vertical/12h/no-pump/Prismata_MonoDark_Vertical_NoPump_12h.zip","img":"assets/previews/vertical/12h/no-pump/MonoDark.webp","kb":491},"vertical|12h|with-pump|MonoLight":{"zip":"files/vertical/12h/with-pump/Prismata_MonoLight_Vertical_12h.zip","img":"assets/previews/vertical/12h/with-pump/MonoLight.webp","kb":518},"vertical|12h|no-pump|MonoLight":{"zip":"files/vertical/12h/no-pump/Prismata_MonoLight_Vertical_NoPump_12h.zip","img":"assets/previews/vertical/12h/no-pump/MonoLight.webp","kb":500},"horizontal|24h|with-pump|GTA6":{"zip":"files/horizontal/24h/with-pump/Prismata_GTA6.zip","img":"assets/previews/horizontal/24h/with-pump/GTA6.webp","kb":691},"horizontal|12h|with-pump|GTA6":{"zip":"files/horizontal/12h/with-pump/Prismata_GTA6_12h.zip","img":"assets/previews/horizontal/12h/with-pump/GTA6.webp","kb":692},"horizontal|24h|no-pump|GTA6":{"zip":"files/horizontal/24h/no-pump/Prismata_GTA6_NoPump.zip","img":"assets/previews/horizontal/24h/no-pump/GTA6.webp","kb":662},"horizontal|12h|no-pump|GTA6":{"zip":"files/horizontal/12h/no-pump/Prismata_GTA6_NoPump_12h.zip","img":"assets/previews/horizontal/12h/no-pump/GTA6.webp","kb":663},"vertical|24h|with-pump|GTA6":{"zip":"files/vertical/24h/with-pump/Prismata_GTA6_Vertical.zip","img":"assets/previews/vertical/24h/with-pump/GTA6.webp","kb":770},"vertical|12h|with-pump|GTA6":{"zip":"files/vertical/12h/with-pump/Prismata_GTA6_Vertical_12h.zip","img":"assets/previews/vertical/12h/with-pump/GTA6.webp","kb":771},"vertical|24h|no-pump|GTA6":{"zip":"files/vertical/24h/no-pump/Prismata_GTA6_Vertical_NoPump.zip","img":"assets/previews/vertical/24h/no-pump/GTA6.webp","kb":746},"vertical|12h|no-pump|GTA6":{"zip":"files/vertical/12h/no-pump/Prismata_GTA6_Vertical_NoPump_12h.zip","img":"assets/previews/vertical/12h/no-pump/GTA6.webp","kb":746},"horizontal|24h|with-pump|Rainbow":{"zip":"files/horizontal/24h/with-pump/Prismata_Rainbow.zip","img":"assets/previews/horizontal/24h/with-pump/Rainbow.webp","kb":1081},"horizontal|12h|with-pump|Rainbow":{"zip":"files/horizontal/12h/with-pump/Prismata_Rainbow_12h.zip","img":"assets/previews/horizontal/12h/with-pump/Rainbow.webp","kb":1082},"horizontal|24h|no-pump|Rainbow":{"zip":"files/horizontal/24h/no-pump/Prismata_Rainbow_NoPump.zip","img":"assets/previews/horizontal/24h/no-pump/Rainbow.webp","kb":1053},"horizontal|12h|no-pump|Rainbow":{"zip":"files/horizontal/12h/no-pump/Prismata_Rainbow_NoPump_12h.zip","img":"assets/previews/horizontal/12h/no-pump/Rainbow.webp","kb":1053},"vertical|24h|with-pump|Rainbow":{"zip":"files/vertical/24h/with-pump/Prismata_Rainbow_Vertical.zip","img":"assets/previews/vertical/24h/with-pump/Rainbow.webp","kb":1213},"vertical|12h|with-pump|Rainbow":{"zip":"files/vertical/12h/with-pump/Prismata_Rainbow_Vertical_12h.zip","img":"assets/previews/vertical/12h/with-pump/Rainbow.webp","kb":1214},"vertical|24h|no-pump|Rainbow":{"zip":"files/vertical/24h/no-pump/Prismata_Rainbow_Vertical_NoPump.zip","img":"assets/previews/vertical/24h/no-pump/Rainbow.webp","kb":1196},"vertical|12h|no-pump|Rainbow":{"zip":"files/vertical/12h/no-pump/Prismata_Rainbow_Vertical_NoPump_12h.zip","img":"assets/previews/vertical/12h/no-pump/Rainbow.webp","kb":1197},"horizontal|24h|with-pump|Toxic":{"zip":"files/horizontal/24h/with-pump/Prismata_Toxic.zip","img":"assets/previews/horizontal/24h/with-pump/Toxic.webp","kb":707},"horizontal|12h|with-pump|Toxic":{"zip":"files/horizontal/12h/with-pump/Prismata_Toxic_12h.zip","img":"assets/previews/horizontal/12h/with-pump/Toxic.webp","kb":708},"horizontal|24h|no-pump|Toxic":{"zip":"files/horizontal/24h/no-pump/Prismata_Toxic_NoPump.zip","img":"assets/previews/horizontal/24h/no-pump/Toxic.webp","kb":675},"horizontal|12h|no-pump|Toxic":{"zip":"files/horizontal/12h/no-pump/Prismata_Toxic_NoPump_12h.zip","img":"assets/previews/horizontal/12h/no-pump/Toxic.webp","kb":676},"vertical|24h|with-pump|Toxic":{"zip":"files/vertical/24h/with-pump/Prismata_Toxic_Vertical.zip","img":"assets/previews/vertical/24h/with-pump/Toxic.webp","kb":797},"vertical|12h|with-pump|Toxic":{"zip":"files/vertical/12h/with-pump/Prismata_Toxic_Vertical_12h.zip","img":"assets/previews/vertical/12h/with-pump/Toxic.webp","kb":798},"vertical|24h|no-pump|Toxic":{"zip":"files/vertical/24h/no-pump/Prismata_Toxic_Vertical_NoPump.zip","img":"assets/previews/vertical/24h/no-pump/Toxic.webp","kb":778},"vertical|12h|no-pump|Toxic":{"zip":"files/vertical/12h/no-pump/Prismata_Toxic_Vertical_NoPump_12h.zip","img":"assets/previews/vertical/12h/no-pump/Toxic.webp","kb":780},"horizontal|24h|with-pump|Lava":{"zip":"files/horizontal/24h/with-pump/Prismata_Lava.zip","img":"assets/previews/horizontal/24h/with-pump/Lava.webp","kb":686},"horizontal|12h|with-pump|Lava":{"zip":"files/horizontal/12h/with-pump/Prismata_Lava_12h.zip","img":"assets/previews/horizontal/12h/with-pump/Lava.webp","kb":687},"horizontal|24h|no-pump|Lava":{"zip":"files/horizontal/24h/no-pump/Prismata_Lava_NoPump.zip","img":"assets/previews/horizontal/24h/no-pump/Lava.webp","kb":662},"horizontal|12h|no-pump|Lava":{"zip":"files/horizontal/12h/no-pump/Prismata_Lava_NoPump_12h.zip","img":"assets/previews/horizontal/12h/no-pump/Lava.webp","kb":663},"vertical|24h|with-pump|Lava":{"zip":"files/vertical/24h/with-pump/Prismata_Lava_Vertical.zip","img":"assets/previews/vertical/24h/with-pump/Lava.webp","kb":773},"vertical|12h|with-pump|Lava":{"zip":"files/vertical/12h/with-pump/Prismata_Lava_Vertical_12h.zip","img":"assets/previews/vertical/12h/with-pump/Lava.webp","kb":774},"vertical|24h|no-pump|Lava":{"zip":"files/vertical/24h/no-pump/Prismata_Lava_Vertical_NoPump.zip","img":"assets/previews/vertical/24h/no-pump/Lava.webp","kb":750},"vertical|12h|no-pump|Lava":{"zip":"files/vertical/12h/no-pump/Prismata_Lava_Vertical_NoPump_12h.zip","img":"assets/previews/vertical/12h/no-pump/Lava.webp","kb":750},"horizontal|24h|with-pump|Matrix":{"zip":"files/horizontal/24h/with-pump/Prismata_Matrix.zip","img":"assets/previews/horizontal/24h/with-pump/Matrix.webp","kb":677},"horizontal|12h|with-pump|Matrix":{"zip":"files/horizontal/12h/with-pump/Prismata_Matrix_12h.zip","img":"assets/previews/horizontal/12h/with-pump/Matrix.webp","kb":678},"horizontal|24h|no-pump|Matrix":{"zip":"files/horizontal/24h/no-pump/Prismata_Matrix_NoPump.zip","img":"assets/previews/horizontal/24h/no-pump/Matrix.webp","kb":644},"horizontal|12h|no-pump|Matrix":{"zip":"files/horizontal/12h/no-pump/Prismata_Matrix_NoPump_12h.zip","img":"assets/previews/horizontal/12h/no-pump/Matrix.webp","kb":645},"vertical|24h|with-pump|Matrix":{"zip":"files/vertical/24h/with-pump/Prismata_Matrix_Vertical.zip","img":"assets/previews/vertical/24h/with-pump/Matrix.webp","kb":758},"vertical|12h|with-pump|Matrix":{"zip":"files/vertical/12h/with-pump/Prismata_Matrix_Vertical_12h.zip","img":"assets/previews/vertical/12h/with-pump/Matrix.webp","kb":759},"vertical|24h|no-pump|Matrix":{"zip":"files/vertical/24h/no-pump/Prismata_Matrix_Vertical_NoPump.zip","img":"assets/previews/vertical/24h/no-pump/Matrix.webp","kb":744},"vertical|12h|no-pump|Matrix":{"zip":"files/vertical/12h/no-pump/Prismata_Matrix_Vertical_NoPump_12h.zip","img":"assets/previews/vertical/12h/no-pump/Matrix.webp","kb":745},"horizontal|24h|with-pump|Gold":{"zip":"files/horizontal/24h/with-pump/Prismata_Gold.zip","img":"assets/previews/horizontal/24h/with-pump/Gold.webp","kb":665},"horizontal|12h|with-pump|Gold":{"zip":"files/horizontal/12h/with-pump/Prismata_Gold_12h.zip","img":"assets/previews/horizontal/12h/with-pump/Gold.webp","kb":665},"horizontal|24h|no-pump|Gold":{"zip":"files/horizontal/24h/no-pump/Prismata_Gold_NoPump.zip","img":"assets/previews/horizontal/24h/no-pump/Gold.webp","kb":633},"horizontal|12h|no-pump|Gold":{"zip":"files/horizontal/12h/no-pump/Prismata_Gold_NoPump_12h.zip","img":"assets/previews/horizontal/12h/no-pump/Gold.webp","kb":634},"vertical|24h|with-pump|Gold":{"zip":"files/vertical/24h/with-pump/Prismata_Gold_Vertical.zip","img":"assets/previews/vertical/24h/with-pump/Gold.webp","kb":745},"vertical|12h|with-pump|Gold":{"zip":"files/vertical/12h/with-pump/Prismata_Gold_Vertical_12h.zip","img":"assets/previews/vertical/12h/with-pump/Gold.webp","kb":746},"vertical|24h|no-pump|Gold":{"zip":"files/vertical/24h/no-pump/Prismata_Gold_Vertical_NoPump.zip","img":"assets/previews/vertical/24h/no-pump/Gold.webp","kb":713},"vertical|12h|no-pump|Gold":{"zip":"files/vertical/12h/no-pump/Prismata_Gold_Vertical_NoPump_12h.zip","img":"assets/previews/vertical/12h/no-pump/Gold.webp","kb":714},"horizontal|24h|with-pump|Synthwave":{"zip":"files/horizontal/24h/with-pump/Prismata_Synthwave.zip","img":"assets/previews/horizontal/24h/with-pump/Synthwave.webp","kb":719},"horizontal|12h|with-pump|Synthwave":{"zip":"files/horizontal/12h/with-pump/Prismata_Synthwave_12h.zip","img":"assets/previews/horizontal/12h/with-pump/Synthwave.webp","kb":720},"horizontal|24h|no-pump|Synthwave":{"zip":"files/horizontal/24h/no-pump/Prismata_Synthwave_NoPump.zip","img":"assets/previews/horizontal/24h/no-pump/Synthwave.webp","kb":696},"horizontal|12h|no-pump|Synthwave":{"zip":"files/horizontal/12h/no-pump/Prismata_Synthwave_NoPump_12h.zip","img":"assets/previews/horizontal/12h/no-pump/Synthwave.webp","kb":697},"vertical|24h|with-pump|Synthwave":{"zip":"files/vertical/24h/with-pump/Prismata_Synthwave_Vertical.zip","img":"assets/previews/vertical/24h/with-pump/Synthwave.webp","kb":804},"vertical|12h|with-pump|Synthwave":{"zip":"files/vertical/12h/with-pump/Prismata_Synthwave_Vertical_12h.zip","img":"assets/previews/vertical/12h/with-pump/Synthwave.webp","kb":805},"vertical|24h|no-pump|Synthwave":{"zip":"files/vertical/24h/no-pump/Prismata_Synthwave_Vertical_NoPump.zip","img":"assets/previews/vertical/24h/no-pump/Synthwave.webp","kb":794},"vertical|12h|no-pump|Synthwave":{"zip":"files/vertical/12h/no-pump/Prismata_Synthwave_Vertical_NoPump_12h.zip","img":"assets/previews/vertical/12h/no-pump/Synthwave.webp","kb":795},"horizontal|24h|with-pump|Ice":{"zip":"files/horizontal/24h/with-pump/Prismata_Ice.zip","img":"assets/previews/horizontal/24h/with-pump/Ice.webp","kb":676},"horizontal|12h|with-pump|Ice":{"zip":"files/horizontal/12h/with-pump/Prismata_Ice_12h.zip","img":"assets/previews/horizontal/12h/with-pump/Ice.webp","kb":677},"horizontal|24h|no-pump|Ice":{"zip":"files/horizontal/24h/no-pump/Prismata_Ice_NoPump.zip","img":"assets/previews/horizontal/24h/no-pump/Ice.webp","kb":646},"horizontal|12h|no-pump|Ice":{"zip":"files/horizontal/12h/no-pump/Prismata_Ice_NoPump_12h.zip","img":"assets/previews/horizontal/12h/no-pump/Ice.webp","kb":647},"vertical|24h|with-pump|Ice":{"zip":"files/vertical/24h/with-pump/Prismata_Ice_Vertical.zip","img":"assets/previews/vertical/24h/with-pump/Ice.webp","kb":760},"vertical|12h|with-pump|Ice":{"zip":"files/vertical/12h/with-pump/Prismata_Ice_Vertical_12h.zip","img":"assets/previews/vertical/12h/with-pump/Ice.webp","kb":760},"vertical|24h|no-pump|Ice":{"zip":"files/vertical/24h/no-pump/Prismata_Ice_Vertical_NoPump.zip","img":"assets/previews/vertical/24h/no-pump/Ice.webp","kb":731},"vertical|12h|no-pump|Ice":{"zip":"files/vertical/12h/no-pump/Prismata_Ice_Vertical_NoPump_12h.zip","img":"assets/previews/vertical/12h/no-pump/Ice.webp","kb":732},"horizontal|24h|with-pump|Sakura":{"zip":"files/horizontal/24h/with-pump/Prismata_Sakura.zip","img":"assets/previews/horizontal/24h/with-pump/Sakura.webp","kb":642},"horizontal|12h|with-pump|Sakura":{"zip":"files/horizontal/12h/with-pump/Prismata_Sakura_12h.zip","img":"assets/previews/horizontal/12h/with-pump/Sakura.webp","kb":643},"horizontal|24h|no-pump|Sakura":{"zip":"files/horizontal/24h/no-pump/Prismata_Sakura_NoPump.zip","img":"assets/previews/horizontal/24h/no-pump/Sakura.webp","kb":608},"horizontal|12h|no-pump|Sakura":{"zip":"files/horizontal/12h/no-pump/Prismata_Sakura_NoPump_12h.zip","img":"assets/previews/horizontal/12h/no-pump/Sakura.webp","kb":608},"vertical|24h|with-pump|Sakura":{"zip":"files/vertical/24h/with-pump/Prismata_Sakura_Vertical.zip","img":"assets/previews/vertical/24h/with-pump/Sakura.webp","kb":720},"vertical|12h|with-pump|Sakura":{"zip":"files/vertical/12h/with-pump/Prismata_Sakura_Vertical_12h.zip","img":"assets/previews/vertical/12h/with-pump/Sakura.webp","kb":721},"vertical|24h|no-pump|Sakura":{"zip":"files/vertical/24h/no-pump/Prismata_Sakura_Vertical_NoPump.zip","img":"assets/previews/vertical/24h/no-pump/Sakura.webp","kb":700},"vertical|12h|no-pump|Sakura":{"zip":"files/vertical/12h/no-pump/Prismata_Sakura_Vertical_NoPump_12h.zip","img":"assets/previews/vertical/12h/no-pump/Sakura.webp","kb":701},"horizontal|24h|with-pump|Halloween":{"zip":"files/horizontal/24h/with-pump/Prismata_Halloween.zip","img":"assets/previews/horizontal/24h/with-pump/Halloween.webp","kb":694},"horizontal|12h|with-pump|Halloween":{"zip":"files/horizontal/12h/with-pump/Prismata_Halloween_12h.zip","img":"assets/previews/horizontal/12h/with-pump/Halloween.webp","kb":695},"horizontal|24h|no-pump|Halloween":{"zip":"files/horizontal/24h/no-pump/Prismata_Halloween_NoPump.zip","img":"assets/previews/horizontal/24h/no-pump/Halloween.webp","kb":662},"horizontal|12h|no-pump|Halloween":{"zip":"files/horizontal/12h/no-pump/Prismata_Halloween_NoPump_12h.zip","img":"assets/previews/horizontal/12h/no-pump/Halloween.webp","kb":663},"vertical|24h|with-pump|Halloween":{"zip":"files/vertical/24h/with-pump/Prismata_Halloween_Vertical.zip","img":"assets/previews/vertical/24h/with-pump/Halloween.webp","kb":782},"vertical|12h|with-pump|Halloween":{"zip":"files/vertical/12h/with-pump/Prismata_Halloween_Vertical_12h.zip","img":"assets/previews/vertical/12h/with-pump/Halloween.webp","kb":783},"vertical|24h|no-pump|Halloween":{"zip":"files/vertical/24h/no-pump/Prismata_Halloween_Vertical_NoPump.zip","img":"assets/previews/vertical/24h/no-pump/Halloween.webp","kb":764},"vertical|12h|no-pump|Halloween":{"zip":"files/vertical/12h/no-pump/Prismata_Halloween_Vertical_NoPump_12h.zip","img":"assets/previews/vertical/12h/no-pump/Halloween.webp","kb":765},"horizontal|24h|with-pump|Aurora":{"zip":"files/horizontal/24h/with-pump/Prismata_Aurora.zip","img":"assets/previews/horizontal/24h/with-pump/Aurora.webp","kb":678},"horizontal|12h|with-pump|Aurora":{"zip":"files/horizontal/12h/with-pump/Prismata_Aurora_12h.zip","img":"assets/previews/horizontal/12h/with-pump/Aurora.webp","kb":679},"horizontal|24h|no-pump|Aurora":{"zip":"files/horizontal/24h/no-pump/Prismata_Aurora_NoPump.zip","img":"assets/previews/horizontal/24h/no-pump/Aurora.webp","kb":641},"horizontal|12h|no-pump|Aurora":{"zip":"files/horizontal/12h/no-pump/Prismata_Aurora_NoPump_12h.zip","img":"assets/previews/horizontal/12h/no-pump/Aurora.webp","kb":642},"vertical|24h|with-pump|Aurora":{"zip":"files/vertical/24h/with-pump/Prismata_Aurora_Vertical.zip","img":"assets/previews/vertical/24h/with-pump/Aurora.webp","kb":754},"vertical|12h|with-pump|Aurora":{"zip":"files/vertical/12h/with-pump/Prismata_Aurora_Vertical_12h.zip","img":"assets/previews/vertical/12h/with-pump/Aurora.webp","kb":755},"vertical|24h|no-pump|Aurora":{"zip":"files/vertical/24h/no-pump/Prismata_Aurora_Vertical_NoPump.zip","img":"assets/previews/vertical/24h/no-pump/Aurora.webp","kb":736},"vertical|12h|no-pump|Aurora":{"zip":"files/vertical/12h/no-pump/Prismata_Aurora_Vertical_NoPump_12h.zip","img":"assets/previews/vertical/12h/no-pump/Aurora.webp","kb":737},"horizontal|24h|with-pump|Bubblegum":{"zip":"files/horizontal/24h/with-pump/Prismata_Bubblegum.zip","img":"assets/previews/horizontal/24h/with-pump/Bubblegum.webp","kb":668},"horizontal|12h|with-pump|Bubblegum":{"zip":"files/horizontal/12h/with-pump/Prismata_Bubblegum_12h.zip","img":"assets/previews/horizontal/12h/with-pump/Bubblegum.webp","kb":669},"horizontal|24h|no-pump|Bubblegum":{"zip":"files/horizontal/24h/no-pump/Prismata_Bubblegum_NoPump.zip","img":"assets/previews/horizontal/24h/no-pump/Bubblegum.webp","kb":640},"horizontal|12h|no-pump|Bubblegum":{"zip":"files/horizontal/12h/no-pump/Prismata_Bubblegum_NoPump_12h.zip","img":"assets/previews/horizontal/12h/no-pump/Bubblegum.webp","kb":640},"vertical|24h|with-pump|Bubblegum":{"zip":"files/vertical/24h/with-pump/Prismata_Bubblegum_Vertical.zip","img":"assets/previews/vertical/24h/with-pump/Bubblegum.webp","kb":755},"vertical|12h|with-pump|Bubblegum":{"zip":"files/vertical/12h/with-pump/Prismata_Bubblegum_Vertical_12h.zip","img":"assets/previews/vertical/12h/with-pump/Bubblegum.webp","kb":755},"vertical|24h|no-pump|Bubblegum":{"zip":"files/vertical/24h/no-pump/Prismata_Bubblegum_Vertical_NoPump.zip","img":"assets/previews/vertical/24h/no-pump/Bubblegum.webp","kb":736},"vertical|12h|no-pump|Bubblegum":{"zip":"files/vertical/12h/no-pump/Prismata_Bubblegum_Vertical_NoPump_12h.zip","img":"assets/previews/vertical/12h/no-pump/Bubblegum.webp","kb":737},"horizontal|24h|with-pump|Ferrari":{"zip":"files/horizontal/24h/with-pump/Prismata_Ferrari.zip","img":"assets/previews/horizontal/24h/with-pump/Ferrari.webp","kb":708},"horizontal|12h|with-pump|Ferrari":{"zip":"files/horizontal/12h/with-pump/Prismata_Ferrari_12h.zip","img":"assets/previews/horizontal/12h/with-pump/Ferrari.webp","kb":709},"horizontal|24h|no-pump|Ferrari":{"zip":"files/horizontal/24h/no-pump/Prismata_Ferrari_NoPump.zip","img":"assets/previews/horizontal/24h/no-pump/Ferrari.webp","kb":677},"horizontal|12h|no-pump|Ferrari":{"zip":"files/horizontal/12h/no-pump/Prismata_Ferrari_NoPump_12h.zip","img":"assets/previews/horizontal/12h/no-pump/Ferrari.webp","kb":677},"vertical|24h|with-pump|Ferrari":{"zip":"files/vertical/24h/with-pump/Prismata_Ferrari_Vertical.zip","img":"assets/previews/vertical/24h/with-pump/Ferrari.webp","kb":806},"vertical|12h|with-pump|Ferrari":{"zip":"files/vertical/12h/with-pump/Prismata_Ferrari_Vertical_12h.zip","img":"assets/previews/vertical/12h/with-pump/Ferrari.webp","kb":807},"vertical|24h|no-pump|Ferrari":{"zip":"files/vertical/24h/no-pump/Prismata_Ferrari_Vertical_NoPump.zip","img":"assets/previews/vertical/24h/no-pump/Ferrari.webp","kb":787},"vertical|12h|no-pump|Ferrari":{"zip":"files/vertical/12h/no-pump/Prismata_Ferrari_Vertical_NoPump_12h.zip","img":"assets/previews/vertical/12h/no-pump/Ferrari.webp","kb":788},"horizontal|24h|with-pump|BloodMoon":{"zip":"files/horizontal/24h/with-pump/Prismata_BloodMoon.zip","img":"assets/previews/horizontal/24h/with-pump/BloodMoon.webp","kb":650},"horizontal|12h|with-pump|BloodMoon":{"zip":"files/horizontal/12h/with-pump/Prismata_BloodMoon_12h.zip","img":"assets/previews/horizontal/12h/with-pump/BloodMoon.webp","kb":651},"horizontal|24h|no-pump|BloodMoon":{"zip":"files/horizontal/24h/no-pump/Prismata_BloodMoon_NoPump.zip","img":"assets/previews/horizontal/24h/no-pump/BloodMoon.webp","kb":621},"horizontal|12h|no-pump|BloodMoon":{"zip":"files/horizontal/12h/no-pump/Prismata_BloodMoon_NoPump_12h.zip","img":"assets/previews/horizontal/12h/no-pump/BloodMoon.webp","kb":622},"vertical|24h|with-pump|BloodMoon":{"zip":"files/vertical/24h/with-pump/Prismata_BloodMoon_Vertical.zip","img":"assets/previews/vertical/24h/with-pump/BloodMoon.webp","kb":731},"vertical|12h|with-pump|BloodMoon":{"zip":"files/vertical/12h/with-pump/Prismata_BloodMoon_Vertical_12h.zip","img":"assets/previews/vertical/12h/with-pump/BloodMoon.webp","kb":732},"vertical|24h|no-pump|BloodMoon":{"zip":"files/vertical/24h/no-pump/Prismata_BloodMoon_Vertical_NoPump.zip","img":"assets/previews/vertical/24h/no-pump/BloodMoon.webp","kb":715},"vertical|12h|no-pump|BloodMoon":{"zip":"files/vertical/12h/no-pump/Prismata_BloodMoon_Vertical_NoPump_12h.zip","img":"assets/previews/vertical/12h/no-pump/BloodMoon.webp","kb":715},"horizontal|24h|with-pump|Tron":{"zip":"files/horizontal/24h/with-pump/Prismata_Tron.zip","img":"assets/previews/horizontal/24h/with-pump/Tron.webp","kb":722},"horizontal|12h|with-pump|Tron":{"zip":"files/horizontal/12h/with-pump/Prismata_Tron_12h.zip","img":"assets/previews/horizontal/12h/with-pump/Tron.webp","kb":723},"horizontal|24h|no-pump|Tron":{"zip":"files/horizontal/24h/no-pump/Prismata_Tron_NoPump.zip","img":"assets/previews/horizontal/24h/no-pump/Tron.webp","kb":686},"horizontal|12h|no-pump|Tron":{"zip":"files/horizontal/12h/no-pump/Prismata_Tron_NoPump_12h.zip","img":"assets/previews/horizontal/12h/no-pump/Tron.webp","kb":686},"vertical|24h|with-pump|Tron":{"zip":"files/vertical/24h/with-pump/Prismata_Tron_Vertical.zip","img":"assets/previews/vertical/24h/with-pump/Tron.webp","kb":816},"vertical|12h|with-pump|Tron":{"zip":"files/vertical/12h/with-pump/Prismata_Tron_Vertical_12h.zip","img":"assets/previews/vertical/12h/with-pump/Tron.webp","kb":817},"vertical|24h|no-pump|Tron":{"zip":"files/vertical/24h/no-pump/Prismata_Tron_Vertical_NoPump.zip","img":"assets/previews/vertical/24h/no-pump/Tron.webp","kb":796},"vertical|12h|no-pump|Tron":{"zip":"files/vertical/12h/no-pump/Prismata_Tron_Vertical_NoPump_12h.zip","img":"assets/previews/vertical/12h/no-pump/Tron.webp","kb":796},"horizontal|24h|with-pump|Joker":{"zip":"files/horizontal/24h/with-pump/Prismata_Joker.zip","img":"assets/previews/horizontal/24h/with-pump/Joker.webp","kb":706},"horizontal|12h|with-pump|Joker":{"zip":"files/horizontal/12h/with-pump/Prismata_Joker_12h.zip","img":"assets/previews/horizontal/12h/with-pump/Joker.webp","kb":706},"horizontal|24h|no-pump|Joker":{"zip":"files/horizontal/24h/no-pump/Prismata_Joker_NoPump.zip","img":"assets/previews/horizontal/24h/no-pump/Joker.webp","kb":672},"horizontal|12h|no-pump|Joker":{"zip":"files/horizontal/12h/no-pump/Prismata_Joker_NoPump_12h.zip","img":"assets/previews/horizontal/12h/no-pump/Joker.webp","kb":672},"vertical|24h|with-pump|Joker":{"zip":"files/vertical/24h/with-pump/Prismata_Joker_Vertical.zip","img":"assets/previews/vertical/24h/with-pump/Joker.webp","kb":798},"vertical|12h|with-pump|Joker":{"zip":"files/vertical/12h/with-pump/Prismata_Joker_Vertical_12h.zip","img":"assets/previews/vertical/12h/with-pump/Joker.webp","kb":799},"vertical|24h|no-pump|Joker":{"zip":"files/vertical/24h/no-pump/Prismata_Joker_Vertical_NoPump.zip","img":"assets/previews/vertical/24h/no-pump/Joker.webp","kb":783},"vertical|12h|no-pump|Joker":{"zip":"files/vertical/12h/no-pump/Prismata_Joker_Vertical_NoPump_12h.zip","img":"assets/previews/vertical/12h/no-pump/Joker.webp","kb":784},"horizontal|24h|with-pump|Amber":{"zip":"files/horizontal/24h/with-pump/Prismata_Amber.zip","img":"assets/previews/horizontal/24h/with-pump/Amber.webp","kb":684},"horizontal|12h|with-pump|Amber":{"zip":"files/horizontal/12h/with-pump/Prismata_Amber_12h.zip","img":"assets/previews/horizontal/12h/with-pump/Amber.webp","kb":685},"horizontal|24h|no-pump|Amber":{"zip":"files/horizontal/24h/no-pump/Prismata_Amber_NoPump.zip","img":"assets/previews/horizontal/24h/no-pump/Amber.webp","kb":658},"horizontal|12h|no-pump|Amber":{"zip":"files/horizontal/12h/no-pump/Prismata_Amber_NoPump_12h.zip","img":"assets/previews/horizontal/12h/no-pump/Amber.webp","kb":659},"vertical|24h|with-pump|Amber":{"zip":"files/vertical/24h/with-pump/Prismata_Amber_Vertical.zip","img":"assets/previews/vertical/24h/with-pump/Amber.webp","kb":764},"vertical|12h|with-pump|Amber":{"zip":"files/vertical/12h/with-pump/Prismata_Amber_Vertical_12h.zip","img":"assets/previews/vertical/12h/with-pump/Amber.webp","kb":765},"vertical|24h|no-pump|Amber":{"zip":"files/vertical/24h/no-pump/Prismata_Amber_Vertical_NoPump.zip","img":"assets/previews/vertical/24h/no-pump/Amber.webp","kb":744},"vertical|12h|no-pump|Amber":{"zip":"files/vertical/12h/no-pump/Prismata_Amber_Vertical_NoPump_12h.zip","img":"assets/previews/vertical/12h/no-pump/Amber.webp","kb":745},"horizontal|24h|with-pump|Emerald":{"zip":"files/horizontal/24h/with-pump/Prismata_Emerald.zip","img":"assets/previews/horizontal/24h/with-pump/Emerald.webp","kb":678},"horizontal|12h|with-pump|Emerald":{"zip":"files/horizontal/12h/with-pump/Prismata_Emerald_12h.zip","img":"assets/previews/horizontal/12h/with-pump/Emerald.webp","kb":679},"horizontal|24h|no-pump|Emerald":{"zip":"files/horizontal/24h/no-pump/Prismata_Emerald_NoPump.zip","img":"assets/previews/horizontal/24h/no-pump/Emerald.webp","kb":644},"horizontal|12h|no-pump|Emerald":{"zip":"files/horizontal/12h/no-pump/Prismata_Emerald_NoPump_12h.zip","img":"assets/previews/horizontal/12h/no-pump/Emerald.webp","kb":645},"vertical|24h|with-pump|Emerald":{"zip":"files/vertical/24h/with-pump/Prismata_Emerald_Vertical.zip","img":"assets/previews/vertical/24h/with-pump/Emerald.webp","kb":766},"vertical|12h|with-pump|Emerald":{"zip":"files/vertical/12h/with-pump/Prismata_Emerald_Vertical_12h.zip","img":"assets/previews/vertical/12h/with-pump/Emerald.webp","kb":767},"vertical|24h|no-pump|Emerald":{"zip":"files/vertical/24h/no-pump/Prismata_Emerald_Vertical_NoPump.zip","img":"assets/previews/vertical/24h/no-pump/Emerald.webp","kb":747},"vertical|12h|no-pump|Emerald":{"zip":"files/vertical/12h/no-pump/Prismata_Emerald_Vertical_NoPump_12h.zip","img":"assets/previews/vertical/12h/no-pump/Emerald.webp","kb":748},"horizontal|24h|with-pump|Nebula":{"zip":"files/horizontal/24h/with-pump/Prismata_Nebula.zip","img":"assets/previews/horizontal/24h/with-pump/Nebula.webp","kb":680},"horizontal|12h|with-pump|Nebula":{"zip":"files/horizontal/12h/with-pump/Prismata_Nebula_12h.zip","img":"assets/previews/horizontal/12h/with-pump/Nebula.webp","kb":681},"horizontal|24h|no-pump|Nebula":{"zip":"files/horizontal/24h/no-pump/Prismata_Nebula_NoPump.zip","img":"assets/previews/horizontal/24h/no-pump/Nebula.webp","kb":656},"horizontal|12h|no-pump|Nebula":{"zip":"files/horizontal/12h/no-pump/Prismata_Nebula_NoPump_12h.zip","img":"assets/previews/horizontal/12h/no-pump/Nebula.webp","kb":657},"vertical|24h|with-pump|Nebula":{"zip":"files/vertical/24h/with-pump/Prismata_Nebula_Vertical.zip","img":"assets/previews/vertical/24h/with-pump/Nebula.webp","kb":762},"vertical|12h|with-pump|Nebula":{"zip":"files/vertical/12h/with-pump/Prismata_Nebula_Vertical_12h.zip","img":"assets/previews/vertical/12h/with-pump/Nebula.webp","kb":763},"vertical|24h|no-pump|Nebula":{"zip":"files/vertical/24h/no-pump/Prismata_Nebula_Vertical_NoPump.zip","img":"assets/previews/vertical/24h/no-pump/Nebula.webp","kb":740},"vertical|12h|no-pump|Nebula":{"zip":"files/vertical/12h/no-pump/Prismata_Nebula_Vertical_NoPump_12h.zip","img":"assets/previews/vertical/12h/no-pump/Nebula.webp","kb":741},"horizontal|24h|with-pump|Steampunk":{"zip":"files/horizontal/24h/with-pump/Prismata_Steampunk.zip","img":"assets/previews/horizontal/24h/with-pump/Steampunk.webp","kb":651},"horizontal|12h|with-pump|Steampunk":{"zip":"files/horizontal/12h/with-pump/Prismata_Steampunk_12h.zip","img":"assets/previews/horizontal/12h/with-pump/Steampunk.webp","kb":652},"horizontal|24h|no-pump|Steampunk":{"zip":"files/horizontal/24h/no-pump/Prismata_Steampunk_NoPump.zip","img":"assets/previews/horizontal/24h/no-pump/Steampunk.webp","kb":623},"horizontal|12h|no-pump|Steampunk":{"zip":"files/horizontal/12h/no-pump/Prismata_Steampunk_NoPump_12h.zip","img":"assets/previews/horizontal/12h/no-pump/Steampunk.webp","kb":624},"vertical|24h|with-pump|Steampunk":{"zip":"files/vertical/24h/with-pump/Prismata_Steampunk_Vertical.zip","img":"assets/previews/vertical/24h/with-pump/Steampunk.webp","kb":720},"vertical|12h|with-pump|Steampunk":{"zip":"files/vertical/12h/with-pump/Prismata_Steampunk_Vertical_12h.zip","img":"assets/previews/vertical/12h/with-pump/Steampunk.webp","kb":721},"vertical|24h|no-pump|Steampunk":{"zip":"files/vertical/24h/no-pump/Prismata_Steampunk_Vertical_NoPump.zip","img":"assets/previews/vertical/24h/no-pump/Steampunk.webp","kb":700},"vertical|12h|no-pump|Steampunk":{"zip":"files/vertical/12h/no-pump/Prismata_Steampunk_Vertical_NoPump_12h.zip","img":"assets/previews/vertical/12h/no-pump/Steampunk.webp","kb":701},"horizontal|24h|with-pump|PastelDream":{"zip":"files/horizontal/24h/with-pump/Prismata_PastelDream.zip","img":"assets/previews/horizontal/24h/with-pump/PastelDream.webp","kb":632},"horizontal|12h|with-pump|PastelDream":{"zip":"files/horizontal/12h/with-pump/Prismata_PastelDream_12h.zip","img":"assets/previews/horizontal/12h/with-pump/PastelDream.webp","kb":633},"horizontal|24h|no-pump|PastelDream":{"zip":"files/horizontal/24h/no-pump/Prismata_PastelDream_NoPump.zip","img":"assets/previews/horizontal/24h/no-pump/PastelDream.webp","kb":599},"horizontal|12h|no-pump|PastelDream":{"zip":"files/horizontal/12h/no-pump/Prismata_PastelDream_NoPump_12h.zip","img":"assets/previews/horizontal/12h/no-pump/PastelDream.webp","kb":600},"vertical|24h|with-pump|PastelDream":{"zip":"files/vertical/24h/with-pump/Prismata_PastelDream_Vertical.zip","img":"assets/previews/vertical/24h/with-pump/PastelDream.webp","kb":706},"vertical|12h|with-pump|PastelDream":{"zip":"files/vertical/12h/with-pump/Prismata_PastelDream_Vertical_12h.zip","img":"assets/previews/vertical/12h/with-pump/PastelDream.webp","kb":707},"vertical|24h|no-pump|PastelDream":{"zip":"files/vertical/24h/no-pump/Prismata_PastelDream_Vertical_NoPump.zip","img":"assets/previews/vertical/24h/no-pump/PastelDream.webp","kb":681},"vertical|12h|no-pump|PastelDream":{"zip":"files/vertical/12h/no-pump/Prismata_PastelDream_Vertical_NoPump_12h.zip","img":"assets/previews/vertical/12h/no-pump/PastelDream.webp","kb":682},"horizontal|24h|with-pump|Bumblebee":{"zip":"files/horizontal/24h/with-pump/Prismata_Bumblebee.zip","img":"assets/previews/horizontal/24h/with-pump/Bumblebee.webp","kb":686},"horizontal|12h|with-pump|Bumblebee":{"zip":"files/horizontal/12h/with-pump/Prismata_Bumblebee_12h.zip","img":"assets/previews/horizontal/12h/with-pump/Bumblebee.webp","kb":686},"horizontal|24h|no-pump|Bumblebee":{"zip":"files/horizontal/24h/no-pump/Prismata_Bumblebee_NoPump.zip","img":"assets/previews/horizontal/24h/no-pump/Bumblebee.webp","kb":657},"horizontal|12h|no-pump|Bumblebee":{"zip":"files/horizontal/12h/no-pump/Prismata_Bumblebee_NoPump_12h.zip","img":"assets/previews/horizontal/12h/no-pump/Bumblebee.webp","kb":658},"vertical|24h|with-pump|Bumblebee":{"zip":"files/vertical/24h/with-pump/Prismata_Bumblebee_Vertical.zip","img":"assets/previews/vertical/24h/with-pump/Bumblebee.webp","kb":762},"vertical|12h|with-pump|Bumblebee":{"zip":"files/vertical/12h/with-pump/Prismata_Bumblebee_Vertical_12h.zip","img":"assets/previews/vertical/12h/with-pump/Bumblebee.webp","kb":763},"vertical|24h|no-pump|Bumblebee":{"zip":"files/vertical/24h/no-pump/Prismata_Bumblebee_Vertical_NoPump.zip","img":"assets/previews/vertical/24h/no-pump/Bumblebee.webp","kb":745},"vertical|12h|no-pump|Bumblebee":{"zip":"files/vertical/12h/no-pump/Prismata_Bumblebee_Vertical_NoPump_12h.zip","img":"assets/previews/vertical/12h/no-pump/Bumblebee.webp","kb":745},"horizontal|24h|with-pump|Ocean":{"zip":"files/horizontal/24h/with-pump/Prismata_Ocean.zip","img":"assets/previews/horizontal/24h/with-pump/Ocean.webp","kb":674},"horizontal|12h|with-pump|Ocean":{"zip":"files/horizontal/12h/with-pump/Prismata_Ocean_12h.zip","img":"assets/previews/horizontal/12h/with-pump/Ocean.webp","kb":675},"horizontal|24h|no-pump|Ocean":{"zip":"files/horizontal/24h/no-pump/Prismata_Ocean_NoPump.zip","img":"assets/previews/horizontal/24h/no-pump/Ocean.webp","kb":640},"horizontal|12h|no-pump|Ocean":{"zip":"files/horizontal/12h/no-pump/Prismata_Ocean_NoPump_12h.zip","img":"assets/previews/horizontal/12h/no-pump/Ocean.webp","kb":641},"vertical|24h|with-pump|Ocean":{"zip":"files/vertical/24h/with-pump/Prismata_Ocean_Vertical.zip","img":"assets/previews/vertical/24h/with-pump/Ocean.webp","kb":760},"vertical|12h|with-pump|Ocean":{"zip":"files/vertical/12h/with-pump/Prismata_Ocean_Vertical_12h.zip","img":"assets/previews/vertical/12h/with-pump/Ocean.webp","kb":760},"vertical|24h|no-pump|Ocean":{"zip":"files/vertical/24h/no-pump/Prismata_Ocean_Vertical_NoPump.zip","img":"assets/previews/vertical/24h/no-pump/Ocean.webp","kb":739},"vertical|12h|no-pump|Ocean":{"zip":"files/vertical/12h/no-pump/Prismata_Ocean_Vertical_NoPump_12h.zip","img":"assets/previews/vertical/12h/no-pump/Ocean.webp","kb":740}},"packs":{"horizontal|24h|with-pump":{"zip":"packs/Prismata_v2.0_Horizontal_24h_WithPump.zip","mb":19.6},"horizontal|24h|no-pump":{"zip":"packs/Prismata_v2.0_Horizontal_24h_NoPump.zip","mb":18.7},"horizontal|12h|with-pump":{"zip":"packs/Prismata_v2.0_Horizontal_12h_WithPump.zip","mb":19.6},"horizontal|12h|no-pump":{"zip":"packs/Prismata_v2.0_Horizontal_12h_NoPump.zip","mb":18.8},"vertical|24h|with-pump":{"zip":"packs/Prismata_v2.0_Vertical_24h_WithPump.zip","mb":22.1},"vertical|24h|no-pump":{"zip":"packs/Prismata_v2.0_Vertical_24h_NoPump.zip","mb":21.5},"vertical|12h|with-pump":{"zip":"packs/Prismata_v2.0_Vertical_12h_WithPump.zip","mb":22.1},"vertical|12h|no-pump":{"zip":"packs/Prismata_v2.0_Vertical_12h_NoPump.zip","mb":21.5}},"themes":[{"id":"Forza","name":"Forza","sw":["#26E8DC","#FF2E97"],"light":false,"new":false},{"id":"BlackWhite","name":"Black & White","sw":["#FFFFFF","#969696"],"light":false,"new":false},{"id":"Cyberpunk","name":"Cyberpunk","sw":["#FCEE0A","#00F0FF"],"light":false,"new":false},{"id":"BlueRed","name":"Blue / Red","sw":["#1E90FF","#FF2D3C"],"light":false,"new":false},{"id":"Stormtrooper","name":"Stormtrooper","sw":["#F3F4F5","#6E7278"],"light":true,"new":false},{"id":"MonoDark","name":"Mono Dark","sw":["#FFFFFF","#000000"],"light":false,"new":false},{"id":"MonoLight","name":"Mono Light","sw":["#000000","#FFFFFF"],"light":true,"new":false},{"id":"GTA6","name":"GTA VI","sw":["#FFA54F","#9B4DFF","#FF3D8B"],"light":false,"new":true},{"id":"Rainbow","name":"Rainbow","sw":["#FF3B3B","#FFD23F","#33FF66","#2E8BFF","#B266FF"],"light":false,"new":true},{"id":"Toxic","name":"Toxic","sw":["#B8FF2B","#C03CFF"],"light":false,"new":true},{"id":"Lava","name":"Lava","sw":["#FF7A1A","#FFD23F","#FF1F3D"],"light":false,"new":true},{"id":"Matrix","name":"Matrix","sw":["#33FF66","#0FA33A"],"light":false,"new":true},{"id":"Gold","name":"Gold","sw":["#E9C46A","#B8892B"],"light":false,"new":true},{"id":"Synthwave","name":"Synthwave","sw":["#00E5FF","#7B2BFF","#FF2BD6"],"light":false,"new":true},{"id":"Ice","name":"Ice","sw":["#BFEFFF","#4FA8FF"],"light":false,"new":true},{"id":"Sakura","name":"Sakura","sw":["#FFB7D5","#FF6FA8"],"light":false,"new":true},{"id":"Halloween","name":"Halloween","sw":["#FF8C1A","#A64DFF"],"light":false,"new":true},{"id":"Aurora","name":"Aurora","sw":["#3DFFB0","#2BC8FF","#8A5CFF"],"light":false,"new":true},{"id":"Bubblegum","name":"Bubblegum","sw":["#7FD8FF","#FFF07A","#FF8FCF"],"light":false,"new":true},{"id":"Ferrari","name":"Ferrari","sw":["#FFD400","#E8101E"],"light":false,"new":true},{"id":"BloodMoon","name":"Blood Moon","sw":["#FF3B3B","#8A0F1A"],"light":false,"new":true},{"id":"Tron","name":"Tron","sw":["#18F0FF","#FF8A1F"],"light":false,"new":true},{"id":"Joker","name":"Joker","sw":["#7CFF3B","#9B30FF"],"light":false,"new":true},{"id":"Amber","name":"Amber Terminal","sw":["#FFB000","#C77800"],"light":false,"new":true},{"id":"Emerald","name":"Emerald","sw":["#19D98B","#E3B341"],"light":false,"new":true},{"id":"Nebula","name":"Nebula","sw":["#FF3DC8","#8E3BFF","#2F6BFF"],"light":false,"new":true},{"id":"Steampunk","name":"Steampunk","sw":["#D98A4E","#7A4B2A","#B5893A"],"light":false,"new":true},{"id":"PastelDream","name":"Pastel Dream","sw":["#C9B6FF","#A8F0E0","#FFC2A8"],"light":false,"new":true},{"id":"Bumblebee","name":"Bumblebee","sw":["#FFD60A","#2B2B2B","#FFD60A"],"light":false,"new":true},{"id":"Ocean","name":"Ocean","sw":["#00D4C8","#0096E6","#005AC8"],"light":false,"new":true}]};
-const st = { o: 'horizontal', c: '24h', p: 'with-pump' };
-try { Object.assign(st, JSON.parse(localStorage.getItem('prismata') || '{}')); } catch (e) {}
-const hp = new URLSearchParams(location.hash.slice(1));
-for (const k of ['o', 'c', 'p']) if (hp.get(k)) st[k] = hp.get(k);
-
-const grid = document.getElementById('grid');
-const icon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg>';
-function render() {
-  document.querySelectorAll('.seg').forEach(s => s.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b.dataset.v === st[s.dataset.key])));
-  grid.className = 'grid' + (st.o === 'vertical' ? ' v' : '');
-  const key = t => `${st.o}|${st.c}|${st.p}|${t}`;
-  grid.innerHTML = D.themes.map((t, i) => {
-    const f = D.files[key(t.id)];
-    const tag = t.light ? '<span class="tag light">LIGHT</span>' : t.new ? '<span class="tag">NEW</span>' : '';
-    return `<article class="card">
-      <button class="pic" data-i="${i}" aria-label="Enlarge ${t.name} preview"><img src="${f.img}" alt="${t.name} theme preview" loading="lazy" width="${st.o === 'vertical' ? 300 : 1200}" height="${st.o === 'vertical' ? 1200 : 300}"></button>
-      <div class="meta"><span class="num">${String(i + 1).padStart(2, '0')}</span><span class="name">${t.name}</span>${tag}<span class="dots" aria-hidden="true">${t.sw.map(c => `<i style="background:${c}"></i>`).join('')}</span></div>
-      <div class="act"><span class="size">${(f.kb / 1024).toFixed(1)} MB · .zip</span><a class="dl" href="${f.zip}" download>${icon}Download</a></div>
-    </article>`;
-  }).join('');
-  const pk = D.packs[`${st.o}|${st.c}|${st.p}`];
-  const pb = document.getElementById('packbtn'); pb.href = pk.zip;
-  document.getElementById('packtxt').textContent = `All 30 · ${pk.mb} MB`;
-  const nice = { horizontal: 'Horizontal 1920×480', vertical: 'Vertical 480×1920', '24h': '24h clock', '12h': '12h clock', 'with-pump': 'with pump RPM', 'no-pump': 'without pump' };
-  document.getElementById('hint').textContent = `Showing: ${nice[st.o]} · ${nice[st.c]} · ${nice[st.p]}`;
-  try { localStorage.setItem('prismata', JSON.stringify(st)); } catch (e) {}
-  history.replaceState(null, '', `#o=${st.o}&c=${st.c}&p=${st.p}`);
+const st={o:'horizontal',c:'24h',p:'with-pump',t:0};
+try{Object.assign(st,JSON.parse(localStorage.getItem('prismata3')||'{}'))}catch(e){}
+const hp=new URLSearchParams(location.hash.slice(1));for(const k of ['o','c','p'])if(hp.get(k))st[k]=hp.get(k);
+const $=id=>document.getElementById(id),K=t=>`${st.o}|${st.c}|${st.p}|${t}`;
+function track(path,title){try{window.goatcounter&&window.goatcounter.count&&window.goatcounter.count({path,title,event:true})}catch(e){}}
+function render(){
+  document.querySelectorAll('.seg').forEach(s=>s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v===st[s.dataset.key])));
+  $('stage').classList.toggle('v',st.o==='vertical');
+  $('list').innerHTML=D.themes.map((t,i)=>`<li><button data-i="${i}" aria-current="${i===st.t}" style="--a:${t.sw[0]};--b:${t.sw[t.sw.length-1]}"><span class="n">${String(i+1).padStart(2,'0')}</span><span class="th"><img src="${D.files['horizontal|'+st.c+'|'+st.p+'|'+t.id].img}" alt="" loading="lazy"></span><span>${t.name}${t.light?'<span class="lt">Light</span>':''}</span><span class="dots">${t.sw.map(c=>`<i style="background:${c}"></i>`).join('')}</span></button></li>`).join('');
+  pick(st.t,false);
+  const pk=D.packs[`${st.o}|${st.c}|${st.p}`];$('packbtn').href=pk.zip;$('packbtn').textContent=`All 30 · ${pk.mb} MB`;
+  try{localStorage.setItem('prismata3',JSON.stringify(st))}catch(e){}
+  history.replaceState(null,'',`#o=${st.o}&c=${st.c}&p=${st.p}`);
 }
-document.querySelectorAll('.seg').forEach(s => s.addEventListener('click', e => {
-  const b = e.target.closest('button'); if (!b) return; st[s.dataset.key] = b.dataset.v; render();
-}));
-const lb = document.getElementById('lb');
-grid.addEventListener('click', e => {
-  const b = e.target.closest('.pic'); if (!b) return;
-  const t = D.themes[+b.dataset.i];
-  lb.querySelector('img').src = D.files[`${st.o}|${st.c}|${st.p}|${t.id}`].img; lb.querySelector('img').alt = t.name + ' theme preview';
-  lb.querySelector('.cap').textContent = t.name; lb.showModal();
-});
-lb.querySelector('button').onclick = () => lb.close();
-
-// download statistics (GoatCounter event, no cookies)
-function track(path, title) { try { window.goatcounter && window.goatcounter.count && window.goatcounter.count({ path, title, event: true }); } catch (e) {} }
-grid.addEventListener('click', e => {
-  const a = e.target.closest('.dl'); if (!a) return;
-  const t = D.themes[+a.closest('.card').querySelector('.pic').dataset.i];
-  track(`download/${st.o}/${st.c}/${st.p}/${t.id}`, `Download ${t.name} · ${st.o} · ${st.c} · ${st.p}`);
-});
-document.getElementById('packbtn').addEventListener('click', () => track(`download/pack/${st.o}/${st.c}/${st.p}`, `Download All 30 · ${st.o} · ${st.c} · ${st.p}`));
-lb.addEventListener('click', e => { if (e.target === lb) lb.close(); });
-
-// hero showcase: cross-fade through every colourway
-const sc = document.getElementById('showcase');
-const picks = D.themes.map(t => [t, D.files[`horizontal|24h|with-pump|${t.id}`].img]);
-sc.innerHTML = picks.map(([t, src], i) => `<img src="${src}" alt="" ${i ? 'loading="lazy"' : ''} class="${i ? '' : 'on'}">`).join('') + '<span class="showcase-name"></span>';
-const imgs = sc.querySelectorAll('img'), nm = sc.querySelector('.showcase-name');
-let cur = 0; nm.textContent = picks[0][0].name;
-if (!matchMedia('(prefers-reduced-motion: reduce)').matches)
-  setInterval(() => { imgs[cur].classList.remove('on'); cur = (cur + 1) % imgs.length; imgs[cur].classList.add('on'); nm.textContent = picks[cur][0].name; }, 2600);
+function pick(i,save=true){
+  st.t=i;const t=D.themes[i],f=D.files[K(t.id)];
+  $('big').src=f.img;$('big').alt=t.name+' theme preview';
+  $('no').textContent=`No. ${String(i+1).padStart(2,'0')} of 30`;$('tname').textContent=t.name;
+  $('tspec').style.background=`linear-gradient(90deg,${t.sw.join(',')})`;
+  const nice={horizontal:'Horizontal 1920×480',vertical:'Vertical 480×1920','24h':'24h','12h':'12h','with-pump':'with pump','no-pump':'no pump'};
+  $('tmeta').textContent=`${nice[st.o]} · ${nice[st.c]} · ${nice[st.p]} · ${(f.kb/1024).toFixed(1)} MB .zip`;
+  $('dl').href=f.zip;
+  document.querySelectorAll('#list button').forEach((b,k)=>b.setAttribute('aria-current',k===i));
+  document.querySelectorAll('.beam').forEach((b,k)=>b.classList.toggle('sel',k===i));
+  if(save)try{localStorage.setItem('prismata3',JSON.stringify(st))}catch(e){}
+}
+document.querySelectorAll('.seg').forEach(s=>s.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;st[s.dataset.key]=b.dataset.v;render()}));
+$('list').addEventListener('click',e=>{const b=e.target.closest('button');if(b)pick(+b.dataset.i)});
+$('dl').addEventListener('click',()=>{const t=D.themes[st.t];track(`download/${st.o}/${st.c}/${st.p}/${t.id}`,`Download ${t.name} · ${st.o} · ${st.c} · ${st.p}`)});
+$('packbtn').addEventListener('click',()=>track(`download/pack/${st.o}/${st.c}/${st.p}`,`Download All 30 · ${st.o} · ${st.c} · ${st.p}`));
+const lb=$('lb');$('screen').onclick=()=>{lb.querySelector('img').src=$('big').src;lb.showModal()};lb.querySelector('button').onclick=()=>lb.close();lb.addEventListener('click',e=>{if(e.target===lb)lb.close()});
+// prism scene: white beam in, 30 colourway beams out
+(function(){
+ const svg=$('psvg'),box=$('prism'),W=box.clientWidth,H=box.clientHeight,N=D.themes.length;
+ const px=W*.22,py=H*.5,R=Math.min(130,H*.24);
+ const A=[px,py-R],B=[px+R*.95,py+R*.6],C=[px-R*.95,py+R*.6];
+ const hit=[px-R*.48,py-R*.2],ex=[px+R*.52,py-R*.05];
+ let h=`<defs><linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".16"/><stop offset="1" stop-color="#fff" stop-opacity=".03"/></linearGradient>
+ <linearGradient id="inbeam" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".6"/><stop offset="1" stop-color="#fff" stop-opacity=".95"/></linearGradient>
+ <filter id="soft" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>`;
+ D.themes.forEach((t,i)=>{h+=`<linearGradient id="bg${i}" x1="0" x2="1"><stop offset="0" stop-color="${t.sw[0]}" stop-opacity=".9"/><stop offset=".55" stop-color="${t.sw[t.sw.length-1]}" stop-opacity=".75"/><stop offset="1" stop-color="${t.sw[t.sw.length-1]}" stop-opacity="0"/></linearGradient>`});
+ h+=`</defs><path d="M${Math.min(40,hit[0]-200)} ${hit[1]+ (hit[0]-Math.min(40,hit[0]-200))*.09} L${hit[0]} ${hit[1]}" stroke="url(#inbeam)" stroke-width="3"/>`;
+ h+=`<path d="M${hit[0]} ${hit[1]} L${ex[0]} ${ex[1]}" stroke="#fff" stroke-opacity=".5" stroke-width="2"/>`;
+ const X=W+40,top=-H*.05,bot=H*1.05;let beams='',soft='';
+ D.themes.forEach((t,i)=>{const y0=top+(bot-top)*i/N,y1=top+(bot-top)*(i+1)/N,e0=ex[1]-6+12*i/N,e1=ex[1]-6+12*(i+1)/N;
+  const d=`M${ex[0]} ${e0} L${X} ${y0} L${X} ${y1-1.2} L${ex[0]} ${e1}Z`;
+  beams+=`<path class="beam" data-i="${i}" d="${d}" fill="url(#bg${i})"><title>${t.name}</title></path>`;soft+=`<path d="${d}" fill="url(#bg${i})"/>`});
+ h+=`<g filter="url(#soft)" opacity=".55">${soft}</g><g class="beams">${beams}</g>`;
+ h+=`<path d="M${A} L${B} L${C}Z" fill="url(#glass)" stroke="#fff" stroke-opacity=".55" stroke-width="1.5" stroke-linejoin="round"/>`;
+ h+=`<path d="M${A} L${C}" stroke="#fff" stroke-opacity=".85" stroke-width="1.5"/>`;
+ svg.innerHTML=h;
+ const lab=$('blabel');
+ svg.addEventListener('mousemove',e=>{const b=e.target.closest('.beam');if(!b){lab.style.opacity=0;return}const r=box.getBoundingClientRect();lab.textContent=D.themes[+b.dataset.i].name;lab.style.top=(e.clientY-r.top-24)+'px';lab.style.opacity=1});
+ svg.addEventListener('mouseleave',()=>lab.style.opacity=0);
+ svg.addEventListener('click',e=>{const b=e.target.closest('.beam');if(!b)return;pick(+b.dataset.i);document.getElementById('themes').scrollIntoView()});
+})();
 render();
 </script>
-</body>
-</html>
+</body></html>
